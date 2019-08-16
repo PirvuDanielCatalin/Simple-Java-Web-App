@@ -82,6 +82,7 @@
     </style>
   </head>
   <body>
+    <embed name="Fireworks" src="Fireworks.mp3" loop="true" hidden="true" autostart="true">
     <canvas id="canvas"></canvas>
     <script>
       window.requestAnimFrame = (function() {
