@@ -18,7 +18,7 @@
         Iterator it = result.iterator();
 
         while (it.hasNext()) {
-            System.out.println(it.next() + "<br>");
+            out.println(it.next() + "<br>");
         }
     %>
 </center>

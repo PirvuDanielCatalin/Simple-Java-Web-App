@@ -16,26 +16,33 @@ public class DataService {
         String password = "postgres";
 
         String errorMessage = "";
+        String queryFilter = "";
 
-        try (Connection con = DriverManager.getConnection(url, user, password);
-//             PreparedStatement pst = con.prepareStatement("SELECT * FROM examples WHERE lower(name) = '" + type.toLowerCase() + "'");
-             PreparedStatement pst = con.prepareStatement("SELECT * FROM examples");
-             ResultSet rs = pst.executeQuery()) {
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection con = DriverManager.getConnection(url, user, password);
 
-            while (rs.next()) {
-                data.add("ABC");
-                data.add(rs.getString("value"));
-                data.add(errorMessage);
+            if (type.equals("Cloud Providers")) {
+                queryFilter = "CP";
+            } else if (type.equals("Shells")) {
+                queryFilter = "SH";
             }
 
-        } catch (SQLException ex) {
+            PreparedStatement pst = con.prepareStatement("SELECT * FROM examples WHERE name = '" + queryFilter + "'");
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                data.add(rs.getString("value"));
+            }
+
+        } catch (Exception ex) {
             Logger lgr = Logger.getLogger(DataService.class.getName());
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
             errorMessage = ex.getMessage();
         }
 
         if (data.isEmpty()) {
-            data.add("Eroare prinsa");
+            data.add("Error");
             data.add(errorMessage);
         }
 
