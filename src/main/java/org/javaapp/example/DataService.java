@@ -11,7 +11,7 @@ public class DataService {
 
         List data = new ArrayList<String>();
 
-        String url = "jdbc:postgresql://jenkinsagentcloudcomputing.eastus.cloudapp.azure.com:5432/postgres";
+        String url = "jdbc:postgresql://postgresdatabasecloudcomputing.eastus.azurecontainer.io:5432/postgres";
         String user = "postgres";
         String password = "postgres";
 
