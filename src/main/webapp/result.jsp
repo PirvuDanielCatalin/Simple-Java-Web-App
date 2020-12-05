@@ -1,23 +1,26 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import ="java.util.*" %>
+<%@page language="java" import="java.util.*" %>
+<%@page import="java.util.List" %>
+<%@page import="java.util.Iterator" %>
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Result</title>
 </head>
 <body>
 <center>
     <h1>
-        Available Brands
+        Available Data
     </h1>
-        <%
-List result= (List) request.getAttribute("brands");
-Iterator it = result.iterator();
+    <br>We have<br><br>
+    <%
+        List result = (List) request.getAttribute("data");
+        Iterator it = result.iterator();
 
-out.println("<br>We have <br><br>");
-while(it.hasNext()){
-out.println(it.next()+"<br>");
-}
-%>
+        while (it.hasNext()) {
+            System.out.println(it.next() + "<br>");
+        }
+    %>
+</center>
 </body>
 </html>
