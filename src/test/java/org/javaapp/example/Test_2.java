@@ -16,7 +16,7 @@ public class Test_2 {
     @Test
     public void test_met1() {
         beginAt("/");
-        assertTitleEquals("Star");
+        assertTitleEquals("Start");
     }
 
     @Test
