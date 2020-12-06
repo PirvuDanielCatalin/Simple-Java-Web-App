@@ -10,7 +10,7 @@ import static net.sourceforge.jwebunit.junit.JWebUnit.*;
 public class Test_2 {
     @Before
     public void prepare() {
-        setBaseUrl("http://localhost:8080/SimpleJavaWebApp");
+        setBaseUrl("http://jenkinsagentcloudcomputing.eastus.cloudapp.azure.com:8080/SimpleJavaWebApp-1.0.0-SNAPSHOT/");
     }
 
     @Test
