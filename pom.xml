@@ -15,6 +15,27 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>maven-public</id>
+            <url>http://nexus3cloudcomputing.eastus.azurecontainer.io:8081/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <url>http://nexus3cloudcomputing.eastus.azurecontainer.io:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+
+        <repository>
+            <id>maven-releases</id>
+            <url>http://nexus3cloudcomputing.eastus.azurecontainer.io:8081/repository/maven-releases/</url>
+        </repository>
+
+    </distributionManagement>
+
     <dependencies>
 
         <dependency>
